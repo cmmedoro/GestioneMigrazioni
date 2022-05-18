@@ -62,6 +62,12 @@ public class FXMLController {
 
 	@FXML
 	void doSimula(ActionEvent event) {
+		Country c = this.boxNazione.getValue();
+		int T = this.model.simula(c);
+		List<CountryAndNumber> stanziali = this.model.getCountryAndNumbers();
+		
+		this.txtResult.setText(T+"\n");
+		this.txtResult.appendText(stanziali + "\n");
 
 	}
 
